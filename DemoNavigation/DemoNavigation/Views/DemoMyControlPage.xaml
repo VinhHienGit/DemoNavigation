@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoNavigation.Views.DemoMyControlPage"
+             xmlns:myControl="clr-namespace:DemoNavigation.MyControll"
+             BackgroundColor="Aqua">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="FontSize" Value="Large"/>
+            </Style>
+            <Style TargetType="myControl:MyEntry">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="WidthRequest" Value="300"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label LineBreakMode="WordWrap">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Hi" TextColor="BlueViolet"/>
+                        <Span Text=", " TextColor="Beige"/>
+                        <Span x:Name="label1" Text="Span 3" TextColor="Chocolate" TextDecorations="Underline"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <myControl:MyEntry x:Name="txtName"
+                               Placeholder="Your name"
+                               PlaceholderColor="Gray"
+                               LineColor="Transparent"/>
+            <!--Button custom-->
+            <Frame CornerRadius="40"
+                   Padding="0"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand">
+                <myControl:MyButton Padding="0"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="CenterAndExpand"
+                                    StartColor="BlueViolet"
+                                    CenterColor="LightBlue"
+                                    EndColor="Red">
+                    <Button x:Name="button"
+                            Text="button2"
+                            Clicked="MyButton1_Clicked"
+                            BackgroundColor="Transparent">
+                    </Button>
+                </myControl:MyButton>
+            </Frame>
+            
+            <Button x:Name="button1"
+                    Text="Button"
+                    TextColor="Black"
+                    Clicked="MyButton1_Clicked"
+                    BorderColor="Black"
+                    BorderRadius="20"
+                    BackgroundColor="Gray"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
