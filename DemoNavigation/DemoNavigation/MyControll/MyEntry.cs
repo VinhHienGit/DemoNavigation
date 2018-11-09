@@ -7,6 +7,11 @@ namespace DemoNavigation.MyControll
 {
     public class MyEntry :Entry
     {
+        
+        //public MyEntry()
+        //{
+        //    this.LineColor = Color.LightPink;
+        //}
         public Color LineColor { get; set; }
     }
 }
